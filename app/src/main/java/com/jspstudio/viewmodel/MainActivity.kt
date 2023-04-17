@@ -1,5 +1,6 @@
 package com.jspstudio.viewmodel
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         })
 
         viewModel.loadUsers()
+
+        binding.btn.setOnClickListener{startActivity(Intent(this, SecondActivity::class.java))}
 
     }
 }
