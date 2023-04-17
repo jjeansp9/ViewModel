@@ -1,11 +1,14 @@
 package com.jspstudio.viewmodel
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.jspstudio.viewmodel.databinding.ActivityMainBinding
+import androidx.lifecycle.lifecycleScope
 import com.jspstudio.viewmodel.databinding.ActivitySecondBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class SecondActivity : AppCompatActivity() {
 
@@ -21,14 +24,13 @@ class SecondActivity : AppCompatActivity() {
             viewModel.increment()
         }
 
-        val countObserver = Observer<Int>{ count ->
-            binding.tv.text = "Count : ${count}"
+        viewModel.count.observe(this) { count ->
+            binding.tv.text = "Count : $count"
+            Log.i("Second","$count")
         }
-
-        viewModel.count.observe(this, countObserver)
-
 
 
 
     }
+
 }

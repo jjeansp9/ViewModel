@@ -1,19 +1,29 @@
 package com.jspstudio.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class ViewModelTest : ViewModel() {
-    private var _count = MutableLiveData<Int>().apply {
-        value = 0
+
+    private var _count = MutableLiveData<Int>()
+    val count: LiveData<Int> = _count
+
+    init {
+        _count.value = 0
     }
 
-    val count: LiveData<Int>
-        get() = _count
+    fun increment() {
+        viewModelScope.launch {
+            _count.value = _count.value?.plus(1)
+            Log.i("count", _count.value.toString())
+            delay(1000)
+        }
 
-    fun increment(){
-        _count.value = (count.value ?: 0) + 1
     }
 
 }
