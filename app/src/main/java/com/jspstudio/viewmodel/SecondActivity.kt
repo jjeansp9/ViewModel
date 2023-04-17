@@ -19,18 +19,22 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        viewModel = ViewModelProvider(this)[ViewModelTest::class.java]
-        binding.btn.setOnClickListener{
-            viewModel.increment()
-        }
+        testViewModel()
 
+
+        binding.btn.setOnClickListener{
+
+        }
+    }
+
+    private fun testViewModel(){
+        viewModel = ViewModelProvider(this)[ViewModelTest::class.java]
+
+        viewModel.increment()
         viewModel.count.observe(this) { count ->
             binding.tv.text = "Count : $count"
             Log.i("Second","$count")
         }
-
-
-
     }
 
 }

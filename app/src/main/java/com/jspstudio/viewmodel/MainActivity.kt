@@ -5,7 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.jspstudio.viewmodel.databinding.ActivityMainBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,14 +31,18 @@ class MainActivity : AppCompatActivity() {
 //
 //        viewModel.loadUsers()
 
+        testViewModel()
+
         binding.btn.setOnClickListener{startActivity(Intent(this, SecondActivity::class.java))}
+    }
 
 
+
+    private fun testViewModel(){
         viewModelTest = ViewModelProvider(this)[ViewModelTest::class.java]
-
+        viewModelTest.increment()
         viewModelTest.count.observe(this) { count ->
             Log.i("MainActivity","$count")
         }
-
     }
 }
