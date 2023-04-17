@@ -26,9 +26,6 @@ class ViewModelTest : ViewModel() {
                 delay(500)
             }
         }
-
-
-
     }
 
 }
