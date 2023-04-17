@@ -1,5 +1,6 @@
 package kr.co.mvvm.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -37,17 +38,13 @@ class UserViewModel : ViewModel() {
 
     fun increament(){
         viewModelScope.launch {
-            while (true){
+            repeat(1000){
                 _count.value = count.value?.plus(1)
 
-                delay(1)
-
-                if (_count.value == 10000){
-                    break
-                }
+                delay(1000)
+                Log.i("viewmodel", _count.value.toString())
             }
         }
-
     }
 }
 

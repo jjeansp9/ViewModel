@@ -74,6 +74,12 @@
             android:layout_height="wrap_content"
             android:text="Increment"
             android:onClick="@{() -> viewModel.increament()}"/>
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="세컨액티비티로 이동"/>
         
     </LinearLayout>
     

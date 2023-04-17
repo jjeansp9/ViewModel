@@ -12,6 +12,10 @@
         android:theme="@style/Theme.ViewModel"
         >
         <activity
+            android:name=".view.SecondActivity"
+            android:exported="false"
+            />
+        <activity
             android:name=".view.MainActivity"
             android:exported="true"
             >
