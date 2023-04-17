@@ -1,10 +1,7 @@
 package com.jspstudio.viewmodel
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -20,12 +17,11 @@ class ViewModelTest : ViewModel() {
 
     fun increment() {
         viewModelScope.launch(Dispatchers.Main) {
-            repeat(1000) {
+            repeat(100) {
                 _count.value = _count.value?.plus(1)
                 Log.i("count", _count.value.toString())
-                delay(500)
+                delay(1000)
             }
         }
     }
-
 }

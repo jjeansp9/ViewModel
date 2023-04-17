@@ -20,11 +20,6 @@ class SecondActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         testViewModel()
-
-
-        binding.btn.setOnClickListener{
-
-        }
     }
 
     private fun testViewModel(){
