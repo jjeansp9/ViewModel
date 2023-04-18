@@ -20,13 +20,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.tv1.text = "aaaa"
 
         dataBindingWithViewModel()
         test1()
 
         binding.btn.setOnClickListener {
             startActivity(Intent(this, SecondActivity::class.java))
-
         }
 
     }
