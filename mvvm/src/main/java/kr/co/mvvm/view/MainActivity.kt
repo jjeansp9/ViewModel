@@ -50,6 +50,14 @@ class MainActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {}
         })
 
+//        lifecycleScope.launch {
+//            repeat(1000){
+//                val s= binding.etName.text.toString()
+//                userViewModel.updateText(s)
+//                delay(100)
+//            }
+//        }
+
     }
 
 
