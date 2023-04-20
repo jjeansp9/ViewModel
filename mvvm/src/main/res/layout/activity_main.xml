@@ -52,22 +52,22 @@
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="이름"
+            android:text="@{viewModel.text}"
             android:layout_centerInParent="true"/>
 
         <TextView
             android:id="@+id/tv_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="나이"
+            android:text=""
             android:layout_centerHorizontal="true"
             android:layout_marginTop="12dp"
             android:layout_below="@id/tv_name"/>
         
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{viewModel.count.toString()}"/>
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@{viewModel.count.toString()}"/>-->
 
         <TextView
             android:id="@+id/tv1"
@@ -76,11 +76,11 @@
             android:text="."
             android:layout_gravity="right"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Increment"
-            android:onClick="@{() -> viewModel.increament()}"/>
+<!--        <Button-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Increment"-->
+<!--            android:onClick="@{() -> viewModel.increament()}"/>-->
 
         <Button
             android:id="@+id/btn"
